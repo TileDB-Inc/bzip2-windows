@@ -10,7 +10,7 @@ The source is unmodified from the [official sources](http://bzip.org), but we ha
 PS> $env:Path += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin"
 ```
 
-1. Execute the following commands:
+2. Execute the following commands:
 ```
 PS> cd bzip2-VERSION
 PS> mkdir build
