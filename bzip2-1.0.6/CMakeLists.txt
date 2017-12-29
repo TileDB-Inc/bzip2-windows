@@ -28,12 +28,9 @@
 project(bzip2)
 cmake_minimum_required(VERSION 2.8)
 
-set(BZIP2_VERSION "1.0.6")
-set(BZIP2_DIR "bzip2-${BZIP2_VERSION}")
-
 set(SOURCES "blocksort.c" "huffman.c" "crctable.c" "randtable.c"
 "compress.c" "decompress.c" "bzlib.c")
-file(GLOB BZIP2_HEADERS "${BZIP2_DIR}/bzlib.h")
+file(GLOB HEADERS "bzlib.h")
 
 # Set build flags
 if (WIN32)
@@ -50,8 +47,9 @@ set_target_properties(bzip2_shared PROPERTIES OUTPUT_NAME "bz2")
 
 # Install libraries
 install(
-  TARGETS bzip2_static bzip2_shared 
+  TARGETS bzip2_static bzip2_shared
+  RUNTIME DESTINATION bin
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
 )
-install(FILES ${BZIP2_HEADERS} DESTINATION include)
+install(FILES ${HEADERS} DESTINATION include)
