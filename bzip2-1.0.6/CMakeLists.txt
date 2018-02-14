@@ -41,9 +41,9 @@ endif()
 
 # Create libraries
 add_library(bzip2_static STATIC ${SOURCES})
-set_target_properties(bzip2_static PROPERTIES OUTPUT_NAME "bz2")
-add_library(bzip2_shared SHARED ${SOURCES})
-set_target_properties(bzip2_shared PROPERTIES OUTPUT_NAME "bz2")
+set_target_properties(bzip2_static PROPERTIES OUTPUT_NAME "libbz2static")
+add_library(bzip2_shared SHARED ${SOURCES} libbz2.def)
+set_target_properties(bzip2_shared PROPERTIES OUTPUT_NAME "libbz2")
 
 # Install libraries
 install(
